@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/gioithieu"
+            android:icon="@drawable/muiten"
+            android:title="Gioi thiệu" />
+        <item
+            android:id="@+id/tintuc"
+            android:icon="@drawable/muiten"
+            android:title="Tin Tức" />
+        <item
+            android:id="@+id/thanhvien"
+            android:icon="@drawable/muiten"
+            android:title="Thành viên" />
+        <item
+            android:id="@+id/nhiemvu"
+            android:icon="@drawable/muiten"
+            android:title="Nhiệm vụ" />
+
+
+
+
+            <item
+                android:id="@+id/thanhtich"
+                android:icon="@drawable/muiten"
+                android:title="Thành tích" />
+            <item
+                android:id="@+id/dangxuat"
+                android:icon="@drawable/muiten"
+                android:title="Đăng xuất" />
+
+    </group>
+
+</menu>

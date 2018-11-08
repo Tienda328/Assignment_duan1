@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="30dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/nhiemvu"
+        android:layout_gravity="center"
+        />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_vitri" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:textColor="@color/colorwhite"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:text="@string/btn_xemnhiemvu"
+            android:layout_height="wrap_content" />
+
+
+</LinearLayout>
