@@ -41,15 +41,16 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <AutoCompleteTextView
-                    android:id="@+id/username"
+                <EditText
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:id="@+id/edtUsername"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nguyen Tien Dat"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:hint="@string/app_nameuser"
+                    android:inputType=""
+                    tools:targetApi="lollipop" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -58,16 +59,15 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:id="@+id/edtPasswrod"
+                    android:layout_marginTop="10dp"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="************"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:hint="@string/app_matkhau"
+                    tools:targetApi="lollipop" />
 
             </android.support.design.widget.TextInputLayout>
 <LinearLayout
