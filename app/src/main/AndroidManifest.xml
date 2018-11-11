@@ -15,15 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".man_hinh_chao_Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".man_hinh_chao_Activity" />
         <activity
-            android:name=".dang_kiActivity"
+            android:name=".LoginActivity"
             android:label="@string/title_activity_dang_ki" />
         <activity
             android:name=".menuActivity"

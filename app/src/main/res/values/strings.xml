@@ -62,4 +62,9 @@
         <string name="contentgnhemvu">Bảo vệ khung thành đội nhà và ngăn cản đối phương ghi bàn thắng</string>
         <string name="app_thumon">Thủ Môn</string>
         <string name="app_capnhap">Cập Nhập</string>
+    <string name="app_hy">Hủy</string>
+    <string name="error_UserName">không dươc để trống</string>
+    <string name="error_Ki_Tu_Dac_Bite">Không chứa các kí tự đặc biệt</string>
+    <string name="error_PassWord_It_Hon_6Ki_Tu">mật khẩu phải ó ít nhất 6 kí tự</string>
+    <string name="notify_wrong_username_or_password">tên đăng nhập hoạc maatr khẩu không đúng yêu cầu nhập lại</string>
 </resources>

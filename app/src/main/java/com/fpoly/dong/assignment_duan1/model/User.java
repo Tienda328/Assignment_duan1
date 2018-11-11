@@ -49,11 +49,11 @@ public class User {
         AnhNguoiDung = anhNguoiDung;
     }
 
-    public String getSDT() {
+    public String getEmail() {
         return Email;
     }
 
-    public void setSDT(String SDT) {
+    public void setEmail(String SDT) {
         this.Email = SDT;
     }
 

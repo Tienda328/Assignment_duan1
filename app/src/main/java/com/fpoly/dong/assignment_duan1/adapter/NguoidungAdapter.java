@@ -7,18 +7,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.acer.duanmau.holder.My_holder;
-import com.example.acer.duanmau.model.User;
-import com.example.acer.duanmau.sqlitedao.UserDAO;
-import com.tinh.dev.myapplication.R;
+
+import com.fpoly.dong.assignment_duan1.R;
+import com.fpoly.dong.assignment_duan1.holder.User_holder;
+import com.fpoly.dong.assignment_duan1.model.User;
+import com.fpoly.dong.assignment_duan1.sqlDAO.UserDAO;
+
 
 import java.util.List;
 
 @SuppressWarnings("UnusedAssignment")
-public class NguoidungAdapter extends RecyclerView.Adapter<My_holder> {
+public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
     private final Context context;
 
     private final List<User> userlist;
@@ -33,20 +34,19 @@ public class NguoidungAdapter extends RecyclerView.Adapter<My_holder> {
 
     @NonNull
     @Override
-    public My_holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.item_cardview,parent,false);
-        return new My_holder(view);
+    public User_holder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater inflater=LayoutInflater.from(viewGroup.getContext());
+        View view=inflater.inflate(R.layout.cardview_user,viewGroup,false);
+        return new User_holder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull My_holder holder, final int position) {
+    public void onBindViewHolder(@NonNull  User_holder holder, final int position) {
         User nguoiDung=userlist.get(position);
-        holder.txtChinh.setText(nguoiDung.getTenNguoiDung());
-        holder.txtPhu.setText(nguoiDung.getSDT()+"");
+        holder.txtname.setText(nguoiDung.getTenNguoiDung());
+        holder.txtemail.setText(nguoiDung.getEmail()+"");
 
-        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+        holder.imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (userlist.size()<=1){
@@ -65,54 +65,10 @@ public class NguoidungAdapter extends RecyclerView.Adapter<My_holder> {
                 final Dialog dialog = new Dialog(context);
                 dialog.setTitle(userlist.get(position).getTenNguoiDung());
 
-                dialog.setContentView(R.layout.dialog_edit_user);
 
-                EditText edtPassWord;
-                EditText edtConfirmPassword;
-                final EditText edtName;
-                final EditText edtPhone;
-
-                edtPassWord = dialog.findViewById(R.id.edtPassWord);
-                edtConfirmPassword = dialog.findViewById(R.id.edtConfirmPassword);
-                edtName = dialog.findViewById(R.id.edtName);
-                edtPhone = dialog.findViewById(R.id.edtPhone);
-
-                edtName.setText(userlist.get(position).getTenNguoiDung());
-                edtPhone.setText(userlist.get(position).getSDT());
-
-
-                dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        User user = new User();
-                        user.setUsername(userlist.get(position).getUsername());
-                        user.setTenNguoiDung(edtName.getText().toString().trim());
-                        user.setSDT(edtPhone.getText().toString().trim());
-
-                        userDAO.updateUser(user);
-
-                        // cap nhat thay doi len giao dien
-                        userlist.get(position).setTenNguoiDung(edtName.getText().toString().trim());
-                        userlist.get(position).setSDT(edtPhone.getText().toString().trim());
-                        notifyDataSetChanged();
-
-                        Toast.makeText(context,context.getString(R.string.notify_save_successful),Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-
-
-                    }
-                });
-                dialog.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();
             }
         });
+
     }
 
     @Override

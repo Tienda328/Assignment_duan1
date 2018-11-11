@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="2dp"
     app:cardCornerRadius="2dp"
+    android:padding="10dp"
     app:cardElevation="5dp"
     android:elevation="5dp">
 
@@ -23,9 +24,9 @@
         <LinearLayout
             android:layout_marginLeft="2dp"
             android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content">
 
             <TextView
@@ -49,29 +50,23 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_marginRight="10dp"
+        <ImageView
+            android:id="@+id/imgEdit"
+            android:layout_width="25dp"
+            android:padding="5dp"
             android:layout_gravity="center_vertical"
-            android:gravity="right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="25dp"
+            android:src="@android:drawable/ic_menu_edit"/>
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/imgDelete"
+            android:padding="5dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/xoa"/>
 
-            <ImageView
-                android:id="@+id/imgEdit"
-                android:layout_width="25dp"
-
-                android:layout_height="25dp"
-                android:src="@android:drawable/ic_menu_edit"/>
-
-            <ImageView
-                android:layout_marginLeft="5dp"
-                android:id="@+id/imgDelete"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/xoa"/>
-
-        </LinearLayout>
     </LinearLayout>
 
 

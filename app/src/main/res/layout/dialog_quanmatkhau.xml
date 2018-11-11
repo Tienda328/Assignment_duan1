@@ -24,18 +24,38 @@
             android:text="@string/app_Email"
             android:textSize="15dp" />
         <EditText
+            android:id="@+id/maila"
             android:hint="@string/app_guiemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <Button
-        android:background="@color/colorPrimary"
-        android:text="@string/app_tim"
-        android:textColor="@color/colorwhite"
-        android:textSize="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:gravity="center"
+       android:layout_height="wrap_content">
+       <Button
+           android:layout_weight="1"
+
+           android:background="@color/colorPrimary"
+           android:text="@string/app_tim"
+           android:id="@+id/gui"
+           android:textColor="@color/colorwhite"
+           android:textSize="20dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+       <Button
+           android:background="@color/colorPrimary"
+           android:text="@string/app_hy"
+           android:layout_weight="1"
+           android:id="@+id/huy"
+           android:textColor="@color/colorwhite"
+           android:textSize="20dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+   </LinearLayout>
     <LinearLayout
         android:layout_marginTop="40dp"
         android:orientation="vertical"
@@ -49,6 +69,7 @@
             android:text="@string/app_matkhaud"
             />
         <EditText
+            android:id="@+id/txtMatKhau"
             android:hint="@string/app_matkhaula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

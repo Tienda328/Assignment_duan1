@@ -29,7 +29,7 @@ public class UserDAO implements Constant {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_USERNAME, user.getUsername());
         contentValues.put(COLUMN_PASSWORD, user.getPassword());
-        contentValues.put(COLUMN_EMAIL, user.getSDT());
+        contentValues.put(COLUMN_EMAIL, user.getEmail());
         contentValues.put(COLUMN_NAME, user.getTenNguoiDung());
 
         // tao cau lenh insert
@@ -64,7 +64,7 @@ public class UserDAO implements Constant {
             user.setUsername(user_name);
             user.setPassword(password);
             user.setTenNguoiDung(name);
-            user.setSDT(phone);
+            user.setEmail(phone);
 
         }
 
@@ -98,7 +98,7 @@ public class UserDAO implements Constant {
             user.setUsername(user_name);
             user.setPassword(password);
             user.setTenNguoiDung(name);
-            user.setSDT(phone);
+            user.setEmail(phone);
 
             // them user vao List< User >
             userList.add(user);
@@ -126,7 +126,7 @@ public class UserDAO implements Constant {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_PASSWORD, user.getPassword());
-        contentValues.put(COLUMN_EMAIL, user.getSDT());
+        contentValues.put(COLUMN_EMAIL, user.getEmail());
         contentValues.put(COLUMN_NAME, user.getTenNguoiDung());
 
         sqLiteDatabase.update(TABLE_USER,
