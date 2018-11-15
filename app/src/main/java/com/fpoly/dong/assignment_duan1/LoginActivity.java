@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity{
 
             // so sanh 2 mat khau, neu giong thi cho vao Home va nguoc lai
             if (passwordInDB.equals(pass)){
-                startActivity(new Intent(this, homeActivity.class));
+                startActivity(new Intent(this, HomeFragment.class));
                 finish();
             }else {
                 Toast.makeText(LoginActivity.this,

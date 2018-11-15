@@ -13,29 +13,29 @@
         completions."
     </string>
     <string name="title_activity_menu">menuActivity</string>
-        <string name="app_name">Quản lý ngôi sao bóng đá</string>
-        <string name="app_user">UserName :</string>
-        <string name="app_password">Password :</string>
-        <string name="app_nameuser">Nguyễn Tiến Đạt</string>
-        <string name="app_matkhau">*************</string>
-        <string name="app_Luumatkhau">Lưu mật khẩu ?</string>
-        <string name="app_login">Đăng Nhập</string>
-        <string name="quen_mat_khau">Quản mật khẩu</string>
-        <string name="title_activity_main2">Main2Activity</string>
-        <string name="navigation_drawer_open">Open navigation drawer</string>
-        <string name="navigation_drawer_close">Close navigation drawer</string>
-        <string name="nav_header_title">Android Studio</string>
-        <string name="nav_header_subtitle">android.studio@android.com</string>
-        <string name="nav_header_desc">Navigation header</string>
-        <string name="action_settings">Settings</string>
-        <string name="appgmail">khongbietgmail@gmail.com</string>
-        <string name="app_Email">Email</string>
-        <string name="app_guiemail">khongcoemail@gmail.com</string>
-        <string name="app_tim">Tìm</string>
-        <string name="app_matkhaula">deonoidau</string>
-        <string name="app_matkhaud">Mật khẩu của bạn là :</string>
-        <string name="app_introduce">Giới Thiệu</string>
-        <string name="contentgoithie">Câu lạc bộ Bóng đá Hà Nội (gọi tắt là Hà Nội FC) có tên tiếng Anh:
+    <string name="app_name">Quản lý ngôi sao bóng đá</string>
+    <string name="app_user">UserName :</string>
+    <string name="app_password">Password :</string>
+    <string name="app_nameuser">Nguyễn Tiến Đạt</string>
+    <string name="app_matkhau">*************</string>
+    <string name="app_Luumatkhau">Lưu mật khẩu ?</string>
+    <string name="app_login">Đăng Nhập</string>
+    <string name="quen_mat_khau">Quản mật khẩu</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="appgmail">khongbietgmail@gmail.com</string>
+    <string name="app_Email">Email</string>
+    <string name="app_guiemail">khongcoemail@gmail.com</string>
+    <string name="app_tim">Tìm</string>
+    <string name="app_matkhaula">deonoidau</string>
+    <string name="app_matkhaud">Mật khẩu của bạn là :</string>
+    <string name="app_introduce">Giới Thiệu</string>
+    <string name="contentgoithie">Câu lạc bộ Bóng đá Hà Nội (gọi tắt là Hà Nội FC) có tên tiếng Anh:
         Hanoi Football Club trước đây mang tên Hà Nội TT - một câu lạc bộ bóng đá lớn tại Việt Nam, hiện thi đấu tại
         Giải bóng đá vô địch quốc gia, có trụ sở ở Hà Nội, sân nhà là sân vận động Hàng Đẫy. Đội bóng đang giữ kỉ lục 3 năm
         liền thăng hạng, từ hạng ba lên thi đấu ở hạng cao nhất của bóng đá Việt Nam.
@@ -48,23 +48,26 @@
         tích nhất Vlegue.
 
         </string>
-        <string name="add_name">Tên cầu thủ</string>
-        <string name="add_namsinh">Năm Sinh</string>
-        <string name="tv_vitri">Vị trí</string>
-        <string name="tv_ngaugianhap">Ngày Gia Nhập</string>
-        <string name="btn_luu">Lưu</string>
-        <string name="btn_thoat">Thoát</string>
-        <string name="sodienthoai">Số điện thoại</string>
-        <string name="btn_tim">Tìm</string>
-        <string name="btn_xemnhiemvu">Xem Nhiệm Vụ</string>
-        <string name="add_vitri">Vị Trí</string>
-        <string name="app_nhiemvu">Nhiệm Vụ</string>
-        <string name="contentgnhemvu">Bảo vệ khung thành đội nhà và ngăn cản đối phương ghi bàn thắng</string>
-        <string name="app_thumon">Thủ Môn</string>
-        <string name="app_capnhap">Cập Nhập</string>
+    <string name="add_name">Tên cầu thủ</string>
+    <string name="add_namsinh">Năm Sinh</string>
+    <string name="tv_vitri">Vị trí</string>
+    <string name="tv_ngaugianhap">Ngày Gia Nhập</string>
+    <string name="btn_luu">Lưu</string>
+    <string name="btn_thoat">Thoát</string>
+    <string name="sodienthoai">Số điện thoại</string>
+    <string name="btn_tim">Tìm</string>
+    <string name="btn_xemnhiemvu">Xem Nhiệm Vụ</string>
+    <string name="add_vitri">Vị Trí</string>
+    <string name="app_nhiemvu">Nhiệm Vụ</string>
+    <string name="contentgnhemvu">Bảo vệ khung thành đội nhà và ngăn cản đối phương ghi bàn thắng</string>
+    <string name="app_thumon">Thủ Môn</string>
+    <string name="app_capnhap">Cập Nhập</string>
     <string name="app_hy">Hủy</string>
     <string name="error_UserName">không dươc để trống</string>
     <string name="error_Ki_Tu_Dac_Bite">Không chứa các kí tự đặc biệt</string>
     <string name="error_PassWord_It_Hon_6Ki_Tu">mật khẩu phải ó ít nhất 6 kí tự</string>
     <string name="notify_wrong_username_or_password">tên đăng nhập hoạc maatr khẩu không đúng yêu cầu nhập lại</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
