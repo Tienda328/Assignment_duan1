@@ -13,10 +13,6 @@
         android:title="Vé"
         android:id="@+id/ve"/>
     <item
-        android:icon="@drawable/iconvideo"
-        android:title="Video"
-        android:id="@+id/video"/>
-    <item
         android:icon="@drawable/iconsquad"
         android:title="Thành viên"
         android:id="@+id/squad"/>

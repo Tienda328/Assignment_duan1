@@ -70,4 +70,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="quanghai">Bầu Hiển: 2 đến 3 năm nữa, Quang Hải sẽ tới những đội hàng đầu châu Á</string>
+    <string name="vanquyet">Văn Quyết, người xua đi nỗi nhớ Công Vinh</string>
+    <string name="aodau">Hà Nội FC chính thức ra mắt logo mới đậm dấu nét văn hóa thủ đô</string>
+    <string name="doitre"><![CDATA[Công tác đào tạo bóng đá trẻ của CLB Hà Nội T&T: Quả ngọt nhà bầu Hiển]]></string>
+    <string name="anmung">V.League 2018: CLB Hà Nội lên ngôi vô địch sớm chưa từng có trong lịch sử</string>
 </resources>

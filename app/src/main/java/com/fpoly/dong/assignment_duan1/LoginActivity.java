@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -167,7 +168,7 @@ public class LoginActivity extends AppCompatActivity{
 
             // so sanh 2 mat khau, neu giong thi cho vao Home va nguoc lai
             if (passwordInDB.equals(pass)){
-                startActivity(new Intent(this, HomeFragment.class));
+                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                 finish();
             }else {
                 Toast.makeText(LoginActivity.this,
