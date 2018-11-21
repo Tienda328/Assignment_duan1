@@ -3,17 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bandau"
+
+    android:padding="25dp"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".man_hinh_chao_Activity">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        />
+    <TextView
+      android:gravity="center"
+        android:fontFamily="@font/dam"
         android:layout_marginTop="20dp"
-        android:src="@drawable/icon_chao" />
-<!--<TextView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Chào mừng bạn đến với thế giới bóng đá" />-->
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addbandau"
+        android:textSize="40dp"
+        android:textColor="@color/colorwhite"
+
+        />
 </LinearLayout>

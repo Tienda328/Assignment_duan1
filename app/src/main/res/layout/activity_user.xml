@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical"
-    tools:context=".userActivity">
+    tools:context=".UserActivity">
 <android.support.design.widget.CoordinatorLayout
     android:background="@color/colorPrimary"
     android:layout_width="match_parent"
@@ -24,11 +24,10 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/recyclerview_NguoiDung">
 
-            >
 
 
         </android.support.v7.widget.RecyclerView>

@@ -32,7 +32,7 @@
             android:name=".menuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".userActivity" />
+        <activity android:name=".UserActivity" />
         <activity android:name=".chitietcauthuActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".SquadActivity" />

@@ -23,14 +23,14 @@
             android:icon="@drawable/muiten"
             android:title="Thành viên" />
         <item
-            android:id="@+id/nhiemvu"
+            android:id="@+id/nguoidung"
             android:icon="@drawable/muiten"
             android:title="Người dùng" />
 
         <item
             android:id="@+id/gioithieu"
             android:icon="@drawable/muiten"
-            android:title="Gioi thiệu" />
+            android:title="Giới thiệu" />
         <item
             android:id="@+id/dangxuat"
             android:icon="@drawable/muiten"

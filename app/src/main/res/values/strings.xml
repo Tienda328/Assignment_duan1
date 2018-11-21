@@ -75,4 +75,14 @@
     <string name="aodau">Hà Nội FC chính thức ra mắt logo mới đậm dấu nét văn hóa thủ đô</string>
     <string name="doitre"><![CDATA[Công tác đào tạo bóng đá trẻ của CLB Hà Nội T&T: Quả ngọt nhà bầu Hiển]]></string>
     <string name="anmung">V.League 2018: CLB Hà Nội lên ngôi vô địch sớm chưa từng có trong lịch sử</string>
+    <string name="addbandau">Chào mừng bạn đến với thế giới bóng đá</string>
+    <string name="matkhau">Mật khẩu</string>
+    <string name="commitmatkhau">Nhật lại mật khẩu</string>
+    <string name="tennguoidung">Tên người dùng</string>
+    <string name="btn_save">Lưu</string>
+    <string name="btn_cancel">Hủy</string>
+    <string name="notify_save_successful">Lưu thành công</string>
+    <string name="notify_add_successful">Thêm người dung thành công</string>
+    <string name="tendangnhap">Tên đăng nhập</string>
+
 </resources>

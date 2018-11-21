@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -55,6 +56,7 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
                     userDAO.deleteUser(userlist.get(position).getUsername());
                     userlist.remove(position);
                     notifyDataSetChanged();
+                    Toast.makeText(context, "Đã Xóa", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -65,9 +67,53 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
                 final Dialog dialog = new Dialog(context);
                 dialog.setTitle(userlist.get(position).getTenNguoiDung());
 
+                dialog.setContentView(R.layout.dialog_edit_user);
 
-            }
-        });
+                EditText edtPassWord;
+                EditText edtConfirmPassword;
+                final EditText edtName;
+                final EditText edtPhone;
+
+                edtPassWord = dialog.findViewById(R.id.edtPassWord);
+                edtConfirmPassword = dialog.findViewById(R.id.edtConfirmPassword);
+                edtName = dialog.findViewById(R.id.edtName);
+                edtPhone = dialog.findViewById(R.id.editEmail);
+
+                edtName.setText(userlist.get(position).getTenNguoiDung());
+                edtPhone.setText(userlist.get(position).getEmail());
+
+
+                dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        User user = new User();
+                        user.setUsername(userlist.get(position).getUsername());
+                        user.setTenNguoiDung(edtName.getText().toString().trim());
+                        user.setEmail(edtPhone.getText().toString().trim());
+
+                        userDAO.updateUser(user);
+
+                        // cap nhat thay doi len giao dien
+                        userlist.get(position).setTenNguoiDung(edtName.getText().toString().trim());
+                        userlist.get(position).setEmail(edtPhone.getText().toString().trim());
+                        notifyDataSetChanged();
+
+                        Toast.makeText(context,context.getString(R.string.notify_save_successful),Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+
+
+                    }
+                });
+                dialog.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+            }        });
 
     }
 
