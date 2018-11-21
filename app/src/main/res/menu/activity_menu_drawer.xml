@@ -5,13 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/gioithieu"
+            android:id="@+id/home"
             android:icon="@drawable/muiten"
-            android:title="Gioi thiệu" />
+            android:title="Trang chu" />
         <item
             android:id="@+id/tintuc"
             android:icon="@drawable/muiten"
             android:title="Tin Tức" />
+        <item
+            android:id="@+id/banve"
+            android:icon="@drawable/muiten"
+            android:title="Ve" />
+
+
         <item
             android:id="@+id/thanhvien"
             android:icon="@drawable/muiten"
@@ -21,14 +27,14 @@
             android:icon="@drawable/muiten"
             android:title="Người dùng" />
 
-
-
-
-
-            <item
-                android:id="@+id/dangxuat"
-                android:icon="@drawable/muiten"
-                android:title="Đăng xuất" />
+        <item
+            android:id="@+id/gioithieu"
+            android:icon="@drawable/muiten"
+            android:title="Gioi thiệu" />
+        <item
+            android:id="@+id/dangxuat"
+            android:icon="@drawable/muiten"
+            android:title="Đăng xuất" />
 
     </group>
 

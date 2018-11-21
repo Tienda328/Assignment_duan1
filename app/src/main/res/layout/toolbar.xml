@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#EC8823"
     android:id="@+id/toolbar"
-    android:theme="@style/SplashTheme1"
-    >
+    android:theme="@style/SplashTheme1">
 
     <TextView
         android:id="@+id/txt"
