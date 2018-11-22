@@ -1,9 +1,11 @@
 package com.fpoly.dong.assignment_duan1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,7 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-public class menuActivity extends AppCompatActivity
+import com.fpoly.dong.assignment_duan1.model.User;
+
+public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView anhve;
     private ImageView new1;
@@ -26,18 +30,9 @@ public class menuActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
 
 
@@ -56,7 +51,7 @@ public class menuActivity extends AppCompatActivity
         anhve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(menuActivity.this,TicketsActivity.class);
+                Intent intent1 = new Intent(HomeActivity.this,TicketsActivity.class);
                 startActivity(intent1);
 
             }
@@ -64,14 +59,14 @@ public class menuActivity extends AppCompatActivity
         new1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(menuActivity.this,NewsActivity.class);
+                Intent intent2 = new Intent(HomeActivity.this,NewsActivity.class);
                 startActivity(intent2);
             }
         });
         squad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(menuActivity.this,SquadActivity.class);
+                Intent intent3 = new Intent(HomeActivity.this,SquadActivity.class);
                 startActivity(intent3);
             }
         });
@@ -115,24 +110,63 @@ public class menuActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        switch (item.getItemId()){
 
-//        if (id == R.id.nav_camera) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+            case R.id.home:
+                startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+                break;
+            case R.id.tintuc:
+//                startActivity(new Intent(HomeActivity.this,Nguoi_dungActivity.class));
+                break;
+            case R.id.banve:
+                startActivity(new Intent(HomeActivity.this,TicketsActivity.class));
+                break;
+
+            case R.id.thanhvien:
+                startActivity(new Intent(HomeActivity.this,SquadActivity.class));
+                break;
+
+            case R.id.nguoidung:
+                startActivity(new Intent(HomeActivity.this,UserActivity.class));
+                break;
+
+            case R.id.gioithieu:
+                startActivity(new Intent(HomeActivity.this,GioithieuActivity.class));
+                break;
+
+            case R.id.dangxuat:
+                Exit();
+                break;
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    private void Exit() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Thoát");
+        builder.setMessage("Bạn có muốn đăng xuất không?");
+//        builder.setIcon(R.drawable.ic_close);
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+                finish();
+            }
+        });
+
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        builder.show();
+
+
+
     }
 }

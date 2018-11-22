@@ -14,17 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".man_hinh_chao_Activity">
-
-        </activity>
-
+        <activity android:name=".man_hinh_chao_Activity"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_dang_ki" />
         <activity
-            android:name=".menuActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +32,8 @@
         <activity android:name=".chitietcauthuActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".SquadActivity" />
-        <activity android:name=".TicketsActivity"></activity>
+        <activity android:name=".TicketsActivity" />
+        <activity android:name=".GioithieuActivity"></activity>
     </application>
 
 </manifest>
