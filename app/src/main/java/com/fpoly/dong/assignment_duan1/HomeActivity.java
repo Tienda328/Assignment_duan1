@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         anhve = (ImageView) findViewById(R.id.anhve);
         new1 = (ImageView) findViewById(R.id.new1);
         squad = (ImageView) findViewById(R.id.squad);

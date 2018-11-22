@@ -84,5 +84,6 @@
     <string name="notify_save_successful">Lưu thành công</string>
     <string name="notify_add_successful">Thêm người dung thành công</string>
     <string name="tendangnhap">Tên đăng nhập</string>
+    <string name="app_tintuc"><![CDATA[Xem tiep >>]]></string>
 
 </resources>
