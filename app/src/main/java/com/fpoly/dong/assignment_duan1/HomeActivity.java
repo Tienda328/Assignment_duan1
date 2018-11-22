@@ -146,7 +146,7 @@ public class HomeActivity extends AppCompatActivity
     }
     private void Exit() {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Thoát");
+        builder.setTitle("Đăng xuất");
         builder.setMessage("Bạn có muốn đăng xuất không?");
 //        builder.setIcon(R.drawable.ic_close);
         builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {

@@ -12,7 +12,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_menu">menuActivity</string>
+    <string name="title_activity_menu">Trang Chủ</string>
     <string name="app_name">Quản lý ngôi sao bóng đá</string>
     <string name="app_user">UserName :</string>
     <string name="app_password">Password :</string>

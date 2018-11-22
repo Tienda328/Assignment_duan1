@@ -1,6 +1,7 @@
 package com.fpoly.dong.assignment_duan1;
 
 import android.app.Dialog;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +23,7 @@ public class UserActivity extends AppCompatActivity {
     private RecyclerView recyclerviewNguoiDung;
     private LinearLayoutManager linearLayoutManager;
     private NguoidungAdapter nguoiDungAdapter;
+    private FloatingActionButton flbAdd;
 
     private List<User> users;
 
@@ -34,6 +36,16 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
         databaseHelper = new DatabaseHelper(this);
         userDAO = new UserDAO(databaseHelper);
+
+        flbAdd=findViewById(R.id.flbAdd);
+
+        flbAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addUser();
+            }
+        });
+
 
 
         for (int i = 0; i < 10; i++) {
@@ -66,7 +78,7 @@ public class UserActivity extends AppCompatActivity {
         users.clear();
     }
 
-    public void addUser(View view) {
+    public void addUser() {
         final Dialog dialog = new Dialog(this);
         dialog.setTitle("Add User");
 
