@@ -17,13 +17,6 @@
         <activity android:name=".man_hinh_chao_Activity">
 
         </activity>
-        <activity android:name=".HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-       </activity>
 
         <activity
             android:name=".LoginActivity"
@@ -31,7 +24,13 @@
         <activity
             android:name=".menuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".UserActivity" />
         <activity android:name=".chitietcauthuActivity" />
         <activity android:name=".NewsActivity" />

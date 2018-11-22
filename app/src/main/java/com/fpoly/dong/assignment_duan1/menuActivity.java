@@ -1,5 +1,6 @@
 package com.fpoly.dong.assignment_duan1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,9 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 public class menuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ImageView anhve;
+    private ImageView new1;
+    private ImageView squad;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,8 @@ public class menuActivity extends AppCompatActivity
             }
         });
 
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,6 +49,34 @@ public class menuActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        anhve = (ImageView) findViewById(R.id.anhve);
+        new1 = (ImageView) findViewById(R.id.new1);
+        squad = (ImageView) findViewById(R.id.squad);
+        anhve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(menuActivity.this,TicketsActivity.class);
+                startActivity(intent1);
+
+            }
+        });
+        new1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(menuActivity.this,NewsActivity.class);
+                startActivity(intent2);
+            }
+        });
+        squad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(menuActivity.this,SquadActivity.class);
+                startActivity(intent3);
+            }
+        });
+
+
     }
 
     @Override
