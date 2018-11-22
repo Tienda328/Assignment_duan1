@@ -116,7 +116,7 @@ public class HomeActivity extends AppCompatActivity
                 startActivity(new Intent(HomeActivity.this,HomeActivity.class));
                 break;
             case R.id.tintuc:
-//                startActivity(new Intent(HomeActivity.this,Nguoi_dungActivity.class));
+//                startActivity(new Intent(HomeActivity.this,NewsFragment.class));
                 break;
             case R.id.banve:
                 startActivity(new Intent(HomeActivity.this,TicketsActivity.class));
