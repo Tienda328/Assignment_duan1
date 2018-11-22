@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.fpoly.dong.assignment_duan1.adapter.AdapterTinTuc;
+import com.fpoly.dong.assignment_duan1.model.News;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -61,12 +62,17 @@ public class NewsActivity extends AppCompatActivity {
                 summary = xmldomParser.getValue(element, "description");
                 link = xmldomParser.getValue(element, "link");
                 news.add(new News(title, summary,link));
+
             }
 
+            adapterLab = new AdapterTinTuc(NewsActivity.this, news);
+            recyclerView.setLayoutManager(linearLayoutManager);
+            recyclerView.setAdapter(adapterLab);
             super.onPostExecute(s);
         }
 
     }
+
     private String docNoiDung_Tu_URL(String theUrl){
         StringBuilder content = new StringBuilder();
         try    {

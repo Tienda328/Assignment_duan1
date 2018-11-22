@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.fpoly.dong.assignment_duan1.model.News;
 import com.fpoly.dong.assignment_duan1.model.User;
 
 public class HomeActivity extends AppCompatActivity
@@ -113,10 +114,10 @@ public class HomeActivity extends AppCompatActivity
         switch (item.getItemId()){
 
             case R.id.home:
-                startActivity(new Intent(HomeActivity.this,HomeActivity.class));
+//                startActivity(new Intent(HomeActivity.this,HomeActivity.class));
                 break;
             case R.id.tintuc:
-//                startActivity(new Intent(HomeActivity.this,NewsFragment.class));
+                startActivity(new Intent(HomeActivity.this,NewsActivity.class));
                 break;
             case R.id.banve:
                 startActivity(new Intent(HomeActivity.this,TicketsActivity.class));
