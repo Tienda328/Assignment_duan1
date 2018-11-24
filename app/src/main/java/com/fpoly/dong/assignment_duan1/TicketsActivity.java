@@ -176,11 +176,16 @@ public class TicketsActivity extends AppCompatActivity {
                     edtten.requestFocus();
                     return;
                 }
-                if (ten.length()<5 && ten.length()>32){
+                if (ten.length()<5 || ten.length()>32) {
                     edtten.setError(getString(R.string.errormaxmin));
                     edtten.requestFocus();
                     return;
                 }
+//                    if (ten.length()>32){
+//                    edtten.setError(getString(R.string.errormax));
+//                    edtten.requestFocus();
+//                    return;
+//                }
                 if (sdt.equals("") ) {
                     edtsdt.setError(getString(R.string.loi1));
                     edtsdt.requestFocus();
