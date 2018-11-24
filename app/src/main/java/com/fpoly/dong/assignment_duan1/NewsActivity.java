@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -24,6 +26,8 @@ import java.util.ArrayList;
 
 public class NewsActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
+
     private EditText editText;
     private Button btn;
     private ArrayList<News> news;
@@ -34,7 +38,16 @@ public class NewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
-
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Tin Tuc");
+        toolbar.setNavigationIcon(R.drawable.iconback);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         recyclerView = findViewById(R.id.recyclerview);
         news = new ArrayList<>();
         linearLayoutManager = new LinearLayoutManager(this,linearLayoutManager.VERTICAL,false);

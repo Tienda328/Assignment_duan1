@@ -11,13 +11,13 @@ public class DatabaseHelper extends SQLiteOpenHelper implements Constant {
 
 
 public DatabaseHelper(Context context) {
-    super(context, "BookManager", null, 1);
+    super(context, "Fc", null, 1);
 
 }
 
-
-    public Cursor getData(String sql){SQLiteDatabase sqLiteDatabase=getWritableDatabase();
-    return sqLiteDatabase.rawQuery(sql,null);
+    public Cursor getData(String sql){
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+        return sqLiteDatabase.rawQuery(sql,null);
     }
 
 

@@ -3,12 +3,14 @@ package com.fpoly.dong.assignment_duan1;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +21,8 @@ import com.fpoly.dong.assignment_duan1.sqlDAO.UserDAO;
 
 
 public class LoginActivity extends AppCompatActivity{
-
+    private SharedPreferences sharedPreferences;
+    private CheckBox cb;
     private EditText edtUserName, edtPassWord;
     private TextView txtForgotPassword;
     private EditText email;
@@ -36,6 +39,7 @@ public class LoginActivity extends AppCompatActivity{
 
         edtUserName = findViewById(R.id.edtUsername);
         edtPassWord = findViewById(R.id.edtPasswrod);
+        cb= findViewById(R.id.cb);
         txtForgotPassword = findViewById(R.id.txtForgotpassword);
         dangnhap = findViewById(R.id.dangnhap);
         dangnhap.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +64,21 @@ public class LoginActivity extends AppCompatActivity{
         Click();
 
     }
+//    void setCheckBox(){
+//        SharedPreferences.Editor editor=sharedPreferences.edit();
+//        if (cb.isChecked()){
+//            editor.putString("TenNguoiDung",edtUserName.getText().toString().trim());
+//            editor.putString("MatKhau",edtPassWord.getText().toString().trim());
+//            editor.putBoolean("check",true);
+//            editor.commit();
+//
+//        }else {
+//            editor.putString("TenNguoiDung","");
+//            editor.putString("MatKhau","");
+//            editor.putBoolean("check",false);
+//            editor.commit();
+//        }
+//    }
 
     private void Click() {
         edtUserName.setOnClickListener(new View.OnClickListener() {

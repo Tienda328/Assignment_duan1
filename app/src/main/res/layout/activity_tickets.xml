@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="10dp"
+
     tools:context=".TicketsActivity">
 
-
+    <include layout="@layout/toolbar"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -65,13 +65,14 @@
 
 
                 <Button
+
                     android:id="@+id/btnmua1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -129,7 +130,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -187,7 +188,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -245,7 +246,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -303,13 +304,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
             </LinearLayout>
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -361,7 +363,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -419,7 +421,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -477,7 +479,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -535,7 +537,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -593,7 +595,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -650,7 +652,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
@@ -707,13 +709,14 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginBottom="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -763,13 +766,22 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:padding="5dp"
                     android:text="Mua" />
 
-            </LinearLayout>
 
+            </LinearLayout>
+            <!--<Button-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:text="@string/veluotve"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="30dp"/>-->
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

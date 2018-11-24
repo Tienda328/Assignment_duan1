@@ -25,6 +25,7 @@ public class HomeActivity extends AppCompatActivity
     private ImageView anhve;
     private ImageView new1;
     private ImageView squad;
+    private Toolbar toolbar;
 
 
 
@@ -34,6 +35,8 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar = findViewById(R.id.toolbar);
+        getSupportActionBar().setTitle("Trang chu");
 
 
 
