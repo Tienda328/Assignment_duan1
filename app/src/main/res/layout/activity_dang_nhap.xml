@@ -107,7 +107,7 @@
                 android:textSize="14sp"
                 android:gravity="center"
                 android:id="@+id/txtForgotpassword"
-                android:textColor="#EC8823"
+                android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Quên mật khẩu ? "/>

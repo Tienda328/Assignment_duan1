@@ -18,7 +18,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:textColor="#F6C06F"
+            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_Email"
@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:textColor="#F6C06F"
+            android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15dp"
@@ -70,7 +70,6 @@
             />
         <EditText
             android:id="@+id/txtMatKhau"
-            android:hint="@string/app_matkhaula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
