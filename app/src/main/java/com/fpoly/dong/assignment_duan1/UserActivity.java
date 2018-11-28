@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class UserActivity extends AppCompatActivity {
     private FloatingActionButton flbAdd;
 
     private List<User> users;
+    private Toolbar toolbar;
 
 
     private DatabaseHelper databaseHelper;
@@ -34,6 +36,16 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Người dùng");
+        toolbar.setNavigationIcon(R.drawable.iconback);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         databaseHelper = new DatabaseHelper(this);
         userDAO = new UserDAO(databaseHelper);
 
@@ -46,18 +58,6 @@ public class UserActivity extends AppCompatActivity {
             }
         });
 
-
-
-        for (int i = 0; i < 10; i++) {
-            User user = new User(
-                    "Tiendat " + new Random().nextInt(),
-                    "123456",
-                    "Tien dat" + new Random().nextInt(),
-                    R.drawable.user,
-                    "0915481151");
-
-            userDAO.insertUser(user);
-        }
 
         AnhXa();
         AddRecyclerview();
@@ -80,7 +80,7 @@ public class UserActivity extends AppCompatActivity {
 
     public void addUser() {
         final Dialog dialog = new Dialog(this);
-        dialog.setTitle("Add User");
+        dialog.setTitle("Thêm Người Dùng");
 
         dialog.setContentView(R.layout.dialog_add_user);
 

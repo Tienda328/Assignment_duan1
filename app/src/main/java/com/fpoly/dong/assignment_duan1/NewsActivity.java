@@ -40,7 +40,7 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Tin Tuc");
+        getSupportActionBar().setTitle("Tin Tức");
         toolbar.setNavigationIcon(R.drawable.iconback);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,7 +14,7 @@ public class GioithieuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gioithieu);
     toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Gioi thieu");
+        getSupportActionBar().setTitle("Giới thiệu");
         toolbar.setNavigationIcon(R.drawable.iconback);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
         @Override

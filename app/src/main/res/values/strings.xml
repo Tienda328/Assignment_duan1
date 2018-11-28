@@ -111,4 +111,5 @@
     <string name="error_Deletee">Không có gì để xóa</string>
     <string name="errormin">phải lớn hơn 5 kí tự</string>
     <string name="errormax">phaiw lớn hơn 32 kí tự</string>
+    <string name="dangky">Đăng ký</string>
 </resources>

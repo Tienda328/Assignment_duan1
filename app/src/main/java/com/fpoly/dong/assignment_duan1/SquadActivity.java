@@ -14,7 +14,7 @@ public class SquadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_squad);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Thanh Vien");
+        toolbar.setTitle("Thành Viên");
         toolbar.setNavigationIcon(R.drawable.iconback);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
