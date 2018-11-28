@@ -198,5 +198,8 @@ public class LoginActivity extends AppCompatActivity{
     }
 
 
+    public void dangky(View view) {
+        startActivity(new Intent(LoginActivity.this, UserActivity.class));
+    }
 }
 
