@@ -48,13 +48,17 @@ public class LoginActivity extends AppCompatActivity{
         edtUserName = findViewById(R.id.edtUsername);
         edtPassWord = findViewById(R.id.edtPasswrod);
         cb= findViewById(R.id.cb);
+        sharedPreferences = getSharedPreferences("Data",MODE_PRIVATE );
+        edtUserName.setText(sharedPreferences.getString("TenNguoiDung",""));
+        edtPassWord.setText(sharedPreferences.getString("MatKhau",""));
+        cb.setChecked(sharedPreferences.getBoolean("check",false));
         txtForgotPassword = findViewById(R.id.txtForgotpassword);
         dangnhap = findViewById(R.id.dangnhap);
         dangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 KiemTra();
-//                setCheckBox();
+                setCheckBox();
             }
         });
 
@@ -73,21 +77,21 @@ public class LoginActivity extends AppCompatActivity{
         Click();
 
     }
-//    void setCheckBox(){
-//        SharedPreferences.Editor editor=sharedPreferences.edit();
-//        if (cb.isChecked()){
-//            editor.putString("TenNguoiDung",edtUserName.getText().toString().trim());
-//            editor.putString("MatKhau",edtPassWord.getText().toString().trim());
-//            editor.putBoolean("check",true);
-//            editor.commit();
-//
-//        }else {
-//            editor.putString("TenNguoiDung","");
-//            editor.putString("MatKhau","");
-//            editor.putBoolean("check",false);
-//            editor.commit();
-//        }
-//    }
+    void setCheckBox(){
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        if (cb.isChecked()){
+            editor.putString("TenNguoiDung",edtUserName.getText().toString().trim());
+            editor.putString("MatKhau",edtPassWord.getText().toString().trim());
+            editor.putBoolean("check",true);
+            editor.commit();
+
+        }else {
+            editor.putString("TenNguoiDung","");
+            editor.putString("MatKhau","");
+            editor.putBoolean("check",false);
+            editor.commit();
+        }
+    }
 
     private void Click() {
         edtUserName.setOnClickListener(new View.OnClickListener() {
@@ -217,7 +221,7 @@ public class LoginActivity extends AppCompatActivity{
         dialog.setContentView(R.layout.dialog_add_user);
 
         final EditText edtPassWord;
-        EditText edtConfirmPassword;
+        final EditText edtConfirmPassword;
         final EditText edtEmail;
         final EditText edittennguoidung;
         final EditText edtUserName;
@@ -232,22 +236,89 @@ public class LoginActivity extends AppCompatActivity{
         dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
-
-                User user = new User();
-                user.setUsername(edtUserName.getText().toString().trim());
+                final String username =edtUserName.getText().toString().trim();
+                final String email = edtEmail.getText().toString().trim();
+                final String tennguoidung = edittennguoidung.getText().toString().trim();
+                final String pass = edtPassWord.getText().toString().trim();
+                final String confin = edtConfirmPassword.getText().toString().trim();
+                        User user = new User();
+               user.setUsername(edtUserName.getText().toString().trim());
                 user.setEmail(edtEmail.getText().toString().trim());
                 user.setTenNguoiDung(edittennguoidung.getText().toString().trim());
                 user.setPassword(edtPassWord.getText().toString().trim());
 
                 userDAO.insertUser(user);
+                if (username.equals("")){
+                edtUserName.setError(getString(R.string.loi1));
+                edtUserName.requestFocus();
+                return;
+                }
+                if (username.length()<5 || username.length()>32) {
+                    edtUserName.setError(getString(R.string.errormaxmin));
+                    edtUserName.requestFocus();
+                    return;
+                }
+                String[] b = {"!", "~", "@", "#", "$", "%", "^", "&", "*", "*", "(", ")", "_", "-", "=", "+", "[", "]", ";", ":", "\\", "|", "?", "/", "<", ">", ".", ",", "'"};
+                //Toast.makeText(this, ""+b.length, Toast.LENGTH_SHORT).show();
+                for (String aB : b) {
+                    if (username.contains(aB)) {
+                        edtUserName.setError(getString(R.string.error_Ki_Tu_Dac_Bite));
+                        return;
+                    }
 
-                // cap nhat len giao dien
-                // add vao vi tri dau tien
-//                users.add(0,user);
-//                nguoiDungAdapter.notifyDataSetChanged();
+                }
+                if (pass.equals("")){
+                    edtPassWord.setError(getString(R.string.loi1));
+                    edtPassWord.requestFocus();
+                    return;
+                }
+                if (pass.length() < 6) {
+
+                    edtPassWord.setError(getString(R.string.error_PassWord_It_Hon_6Ki_Tu));
+                    edtPassWord.requestFocus();
+                    return;
+                }
+                for (String aB : b) {
+                    if (pass.contains(aB)) {
+                        edtPassWord.setError(getString(R.string.error_Ki_Tu_Dac_Bite));
+                        edtPassWord.requestFocus();
+                        return;
+                    }
+
+                }
+
+                if (confin.equals("")){
+                    edtConfirmPassword.setError(getString(R.string.error_PassWord));
+                    edtConfirmPassword.requestFocus();
+                    return;
+                }
+                if (!confin.equals(pass)){
+                    edtConfirmPassword.setError(getString(R.string.error_ConfirmPassWord));
+                    edtConfirmPassword.requestFocus();
+                    return;
+                }
+
+
+  if (tennguoidung.equals("")){
+      edittennguoidung.setError(getString(R.string.loi1));
+      edittennguoidung.requestFocus();
+                return;
+                }
+                if (email.equals("")){
+                    edtEmail.setError(getString(R.string.loi1));
+                    edtEmail.requestFocus();
+                    return;
+                }
+                String a = "(\\w)+\\@((\\w)+\\.)+(\\w{2,4})";
+                String c = edtEmail.getText().toString();
+
+                if (c.matches(a)) {
+                    edtEmail.setError(getString(R.string.erorrrr));
+                    edtEmail.requestFocus();
+                    return;
+                }
+
+
 
 
                 Toast.makeText(LoginActivity.this,

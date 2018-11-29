@@ -22,7 +22,6 @@ import java.util.List;
 @SuppressWarnings("UnusedAssignment")
 public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
     private final Context context;
-
     private final List<User> userlist;
     private final UserDAO userDAO;
 

@@ -168,7 +168,7 @@ public class TicketsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String ten = edtten.getText().toString().trim();
                 final String sdt = edtsdt.getText().toString().trim();
-                final String diachi = edtdiachi.getText().toString().trim();
+                final String diachi =    edtdiachi.getText().toString().trim();
                 final String soluong = edtsoluong.getText().toString().trim();
 
                 if (ten.equals("") ) {
