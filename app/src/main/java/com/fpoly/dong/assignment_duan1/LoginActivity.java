@@ -15,9 +15,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fpoly.dong.assignment_duan1.adapter.NguoidungAdapter;
 import com.fpoly.dong.assignment_duan1.databasa.DatabaseHelper;
 import com.fpoly.dong.assignment_duan1.model.User;
 import com.fpoly.dong.assignment_duan1.sqlDAO.UserDAO;
+
+import java.util.List;
 
 
 public class LoginActivity extends AppCompatActivity{
@@ -25,10 +28,15 @@ public class LoginActivity extends AppCompatActivity{
     private CheckBox cb;
     private EditText edtUserName, edtPassWord;
     private TextView txtForgotPassword;
+    private NguoidungAdapter nguoiDungAdapter;
     private EditText email;
     private TextView txtMatKhau;
     private Button  dangnhap;
     private FloatingActionButton flbForMatText;
+
+    private List<User> users;
+    private DatabaseHelper databaseHelper;
+
 
     private UserDAO userDAO;
 
@@ -46,6 +54,7 @@ public class LoginActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 KiemTra();
+//                setCheckBox();
             }
         });
 
@@ -199,7 +208,65 @@ public class LoginActivity extends AppCompatActivity{
 
 
     public void dangky(View view) {
-        startActivity(new Intent(LoginActivity.this, UserActivity.class));
+       addUser();
+    }
+    public void addUser() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setTitle("Đăng Ký");
+
+        dialog.setContentView(R.layout.dialog_add_user);
+
+        final EditText edtPassWord;
+        EditText edtConfirmPassword;
+        final EditText edtEmail;
+        final EditText edittennguoidung;
+        final EditText edtUserName;
+
+        edtUserName = dialog.findViewById(R.id.edtUserName);
+        edtPassWord = dialog.findViewById(R.id.edtPassWord);
+        edtConfirmPassword = dialog.findViewById(R.id.edtConfirmPassword);
+        edtEmail = dialog.findViewById(R.id.editEmail);
+        edittennguoidung = dialog.findViewById(R.id.edittennguoidung);
+
+
+        dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+                User user = new User();
+                user.setUsername(edtUserName.getText().toString().trim());
+                user.setEmail(edtEmail.getText().toString().trim());
+                user.setTenNguoiDung(edittennguoidung.getText().toString().trim());
+                user.setPassword(edtPassWord.getText().toString().trim());
+
+                userDAO.insertUser(user);
+
+                // cap nhat len giao dien
+                // add vao vi tri dau tien
+//                users.add(0,user);
+//                nguoiDungAdapter.notifyDataSetChanged();
+
+
+                Toast.makeText(LoginActivity.this,
+                        getString(R.string.notify_add_successful), Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+
+            }
+        });
+        dialog.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+
+
+
     }
 }
 
