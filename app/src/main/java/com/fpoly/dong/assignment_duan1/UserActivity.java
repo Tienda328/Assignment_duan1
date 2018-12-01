@@ -109,7 +109,7 @@ public class UserActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_add_user);
 
         final EditText edtPassWord;
-        EditText edtConfirmPassword;
+        final EditText edtConfirmPassword;
         final EditText edtEmail;
         final EditText edittennguoidung;
         final EditText edtUserName;
@@ -124,8 +124,11 @@ public class UserActivity extends AppCompatActivity {
         dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                final String username =edtUserName.getText().toString().trim();
+                final String email = edtEmail.getText().toString().trim();
+                final String tennguoidung = edittennguoidung.getText().toString().trim();
+                final String pass = edtPassWord.getText().toString().trim();
+                final String confin = edtConfirmPassword.getText().toString().trim();
 
 
                 User user = new User();
@@ -136,10 +139,80 @@ public class UserActivity extends AppCompatActivity {
 
                 userDAO.insertUser(user);
 
-                // cap nhat len giao dien
-                // add vao vi tri dau tien
+
                 users.add(0,user);
                 nguoiDungAdapter.notifyDataSetChanged();
+
+                if (username.equals("")){
+                    edtUserName.setError(getString(R.string.loi1));
+                    edtUserName.requestFocus();
+                    return;
+                }
+                if (username.length()<5 || username.length()>32) {
+                    edtUserName.setError(getString(R.string.errormaxmin));
+                    edtUserName.requestFocus();
+                    return;
+                }
+                String[] b = {"!", "~", "@", "#", "$", "%", "^", "&", "*", "*", "(", ")", "_", "-", "=", "+", "[", "]", ";", ":", "\\", "|", "?", "/", "<", ">", ".", ",", "'"};
+                //Toast.makeText(this, ""+b.length, Toast.LENGTH_SHORT).show();
+                for (String aB : b) {
+                    if (username.contains(aB)) {
+                        edtUserName.setError(getString(R.string.error_Ki_Tu_Dac_Bite));
+                        return;
+                    }
+
+                }
+                if (pass.equals("")){
+                    edtPassWord.setError(getString(R.string.loi1));
+                    edtPassWord.requestFocus();
+                    return;
+                }
+                if (pass.length() < 6) {
+
+                    edtPassWord.setError(getString(R.string.error_PassWord_It_Hon_6Ki_Tu));
+                    edtPassWord.requestFocus();
+                    return;
+                }
+                for (String aB : b) {
+                    if (pass.contains(aB)) {
+                        edtPassWord.setError(getString(R.string.error_Ki_Tu_Dac_Bite));
+                        edtPassWord.requestFocus();
+                        return;
+                    }
+
+                }
+
+                if (confin.equals("")){
+                    edtConfirmPassword.setError(getString(R.string.error_PassWord));
+                    edtConfirmPassword.requestFocus();
+                    return;
+                }
+                if (!confin.equals(pass)){
+                    edtConfirmPassword.setError(getString(R.string.error_ConfirmPassWord));
+                    edtConfirmPassword.requestFocus();
+                    return;
+                }
+
+
+                if (tennguoidung.equals("")){
+                    edittennguoidung.setError(getString(R.string.loi1));
+                    edittennguoidung.requestFocus();
+                    return;
+                }
+                if (email.equals("")){
+                    edtEmail.setError(getString(R.string.loi1));
+                    edtEmail.requestFocus();
+                    return;
+                }
+//                String a = "(\\w)+\\@((\\w)+\\.)+(\\w{2,4})";
+//                String c = edtEmail.getText().toString();
+
+//                if (c.matches(a)) {
+//                    edtEmail.setError(getString(R.string.erorrrr));
+//                    edtEmail.requestFocus();
+//                    return;
+//                }
+
 
 
                 Toast.makeText(UserActivity.this,

@@ -1,5 +1,6 @@
 package com.fpoly.dong.assignment_duan1.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -68,8 +69,8 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
 
                 dialog.setContentView(R.layout.dialog_edit_user);
 
-                EditText edtPassWord;
-                EditText edtConfirmPassword;
+                final EditText edtPassWord;
+                final EditText edtConfirmPassword;
                 final EditText edtName;
                 final EditText edtPhone;
 
@@ -83,8 +84,11 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
 
 
                 dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
+                    @SuppressLint("NewApi")
                     @Override
                     public void onClick(View view) {
+                        final String pass = edtPassWord.getText().toString().trim();
+                        final String confin = edtConfirmPassword.getText().toString().trim();
 
                         User user = new User();
                         user.setUsername(userlist.get(position).getUsername());
@@ -92,11 +96,44 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
                         user.setEmail(edtPhone.getText().toString().trim());
 
                         userDAO.updateUser(user);
+                        String[] b = {"!", "~", "@", "#", "$", "%", "^", "&", "*", "*", "(", ")", "_", "-", "=", "+", "[", "]", ";", ":", "\\", "|", "?", "/", "<", ">", ".", ",", "'"};
+                        if (pass.equals("")){
+                            edtPassWord.setError("vui long nhap");
+                            edtPassWord.requestFocus();
+                            return;
+                        }
+                        if (pass.length() < 6) {
+
+                            edtPassWord.setError("phai có ít nhất 6 kí tự  ");
+                            edtPassWord.requestFocus();
+                            return;
+                        }
+                        for (String aB : b) {
+                            if (pass.contains(aB)) {
+                                edtPassWord.setError("không được có kí tự đặc biệt");
+                                edtPassWord.requestFocus();
+                                return;
+                            }
+
+                        }
+
+                        if (confin.equals("")){
+                            edtConfirmPassword.setError("không được để trống");
+                            edtConfirmPassword.requestFocus();
+                            return;
+                        }
+                        if (!confin.equals(pass)){
+                            edtConfirmPassword.setError("không khớp mật khẩu");
+                            edtConfirmPassword.requestFocus();
+                            return;
+                        }
+
 
                         // cap nhat thay doi len giao dien
                         userlist.get(position).setTenNguoiDung(edtName.getText().toString().trim());
                         userlist.get(position).setEmail(edtPhone.getText().toString().trim());
                         notifyDataSetChanged();
+
 
                         Toast.makeText(context,context.getString(R.string.notify_save_successful),Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
