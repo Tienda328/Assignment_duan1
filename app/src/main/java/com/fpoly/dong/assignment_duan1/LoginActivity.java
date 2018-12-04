@@ -309,10 +309,12 @@ public class LoginActivity extends AppCompatActivity{
                     edtEmail.requestFocus();
                     return;
                 }
+
+
                 String a = "(\\w)+\\@((\\w)+\\.)+(\\w{2,4})";
                 String c = edtEmail.getText().toString();
 
-                if (c.matches(a)) {
+                if (a.matches(c)) {
                     edtEmail.setError(getString(R.string.erorrrr));
                     edtEmail.requestFocus();
                     return;

@@ -1,8 +1,10 @@
 package com.fpoly.dong.assignment_duan1.adapter;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -53,10 +55,27 @@ public class NguoidungAdapter extends RecyclerView.Adapter<User_holder> {
                 if (userlist.size()<=1){
                     Toast.makeText(context, "Không thể Xóa", Toast.LENGTH_SHORT).show();
                 }else {
-                    userDAO.deleteUser(userlist.get(position).getUsername());
-                    userlist.remove(position);
-                    notifyDataSetChanged();
-                    Toast.makeText(context, "Đã Xóa", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder builder=new AlertDialog.Builder(context);
+                    builder.setTitle("Xóa");
+                    builder.setMessage("Bạn có muốn xóa không?");
+                    builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            userDAO.deleteUser(userlist.get(position).getUsername());
+                            userlist.remove(position);
+                            notifyDataSetChanged();
+                            Toast.makeText(context, "Đã Xóa", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    builder.show();
                 }
 
             }
